@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp1">
+
+    <!--Title="Login"-->
+    <ShellContent        
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <!-- FlyoutItem 為側邊導航欄 -->
+    <FlyoutItem Title="Box Binding">
+        <ShellContent ContentTemplate="{DataTemplate local:BoxBindingPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Dispatch Floor">
+        <ShellContent ContentTemplate="{DataTemplate local:DispatchFloorPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Others">
+        <ShellContent ContentTemplate="{DataTemplate local:SystemPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Others">
+        <ShellContent ContentTemplate="{DataTemplate local:ErrorPage}" />
+    </FlyoutItem>
+</Shell>

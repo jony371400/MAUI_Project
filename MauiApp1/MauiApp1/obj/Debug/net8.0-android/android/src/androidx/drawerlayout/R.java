@@ -12,7 +12,7 @@ public final class R {
 		public static final int elevation = 0x7f0301a0;
 	}
 	public static final class dimen {
-		public static final int def_drawer_elevation = 0x7f06005f;
+		public static final int def_drawer_elevation = 0x7f06005d;
 	}
 	public static final class styleable {
 		public static final int[] DrawerLayout = new int[] { 0x7f0301a0 };

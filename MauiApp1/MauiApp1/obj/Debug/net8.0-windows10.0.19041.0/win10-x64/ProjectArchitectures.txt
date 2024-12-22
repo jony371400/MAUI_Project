@@ -1,1 +1,1 @@
-D:\SourceCode\Testing\MauiApp1\MauiApp1\MauiApp1.csproj;x64
+D:\SourceCode\SideProject\Project-FullStack-MauiApp\MauiApp1\MauiApp1\MauiApp1.csproj;x64

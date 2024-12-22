@@ -20,12 +20,12 @@ public final class R {
 	}
 	public static final class id {
 		public static final int bottom = 0x7f080061;
-		public static final int end = 0x7f0800b8;
-		public static final int left = 0x7f0800f3;
-		public static final int none = 0x7f08014d;
-		public static final int right = 0x7f080170;
-		public static final int start = 0x7f0801bb;
-		public static final int top = 0x7f0801ea;
+		public static final int end = 0x7f0800b3;
+		public static final int left = 0x7f0800ee;
+		public static final int none = 0x7f080148;
+		public static final int right = 0x7f08016b;
+		public static final int start = 0x7f0801b6;
+		public static final int top = 0x7f0801e5;
 	}
 	public static final class style {
 		public static final int Widget_Support_CoordinatorLayout = 0x7f100458;

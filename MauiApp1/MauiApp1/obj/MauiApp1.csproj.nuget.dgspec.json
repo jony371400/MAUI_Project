@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SourceCode\\Testing\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {}
+    "D:\\SourceCode\\SideProject\\Project-FullStack-MauiApp\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {}
   },
   "projects": {
-    "D:\\SourceCode\\Testing\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {
+    "D:\\SourceCode\\SideProject\\Project-FullStack-MauiApp\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SourceCode\\Testing\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+        "projectUniqueName": "D:\\SourceCode\\SideProject\\Project-FullStack-MauiApp\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
         "projectName": "MauiApp1",
-        "projectPath": "D:\\SourceCode\\Testing\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+        "projectPath": "D:\\SourceCode\\SideProject\\Project-FullStack-MauiApp\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
         "packagesPath": "C:\\Users\\11107647\\.nuget\\packages\\",
-        "outputPath": "D:\\SourceCode\\Testing\\MauiApp1\\MauiApp1\\obj\\",
+        "outputPath": "D:\\SourceCode\\SideProject\\Project-FullStack-MauiApp\\MauiApp1\\MauiApp1\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -66,6 +66,10 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -78,11 +82,23 @@
               "target": "Package",
               "version": "[8.0.72, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.21, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -109,6 +125,10 @@
         "net8.0-ios17.5": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -121,11 +141,23 @@
               "target": "Package",
               "version": "[8.0.72, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.21, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -152,6 +184,10 @@
         "net8.0-maccatalyst17.5": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -164,11 +200,23 @@
               "target": "Package",
               "version": "[8.0.72, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.21, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -196,6 +244,10 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -207,6 +259,18 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[8.0.72, )"
+            },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.21, )"
+            },
+            "Plugin.Maui.Audio": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

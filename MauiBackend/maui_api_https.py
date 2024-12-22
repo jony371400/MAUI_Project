@@ -8,16 +8,17 @@ CORS(app)
 api = Api(app)
 
 def get_db_connection():
-    conn = sqlite3.connect('/d:/SourceCode/SideProject/MAUI_Project/MauiBackend/maui.db')
+    conn = sqlite3.connect('/d:/SourceCode/SideProject/Project-FullStack-MauiApp/MauiBackend/maui.db')
     conn.row_factory = sqlite3.Row
     return conn
 
 class CheckApkVersion(Resource):
     def get(self):
+        print("CheckApkVersion API Start")
         apk_parameter = request.args.get('apk')
 
         if not apk_parameter:
-            return jsonify({"message": "apk parameter is required"}), 400
+            return jsonify({"status": "0009", "message": "APK parameter is required"})
 
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -26,18 +27,19 @@ class CheckApkVersion(Resource):
         conn.close()
 
         if result:
-            return jsonify({"apk": result["apk"], "version": result["version"]})
+            return jsonify({"status": "0000", "message": "APK found", "apk": result["apk"], "version": result["version"]})
         else:
-            return jsonify({"message": "APK not found"}), 404
+            return jsonify({"status": "0001", "message": "APK not found"})
 
-class Login(Resource):
+class CheckUserInfomation(Resource):
     def post(self):
+        print("CheckUserInfomation API Start")
         data = request.get_json()
         username = data.get('username')
         password = data.get('password')
 
         if not username or not password:
-            return jsonify({"message": "Username and password are required"}), 400
+            return jsonify({"status": "0009", "message": "Username and password are required"})
 
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -46,14 +48,41 @@ class Login(Resource):
         conn.close()
 
         if user:
-            return jsonify({"message": "Login successful", "token": "fake-jwt-token"})
+            return jsonify({"status": "0000", "message": "Login successful"})
         else:
-            return jsonify({"message": "Invalid credentials"}), 401
+            return jsonify({"status": "0001", "message": "Invalid credentials"})
+
+class CreateUser(Resource):
+    def post(self):
+        print("CreateUser API Start")
+        data = request.get_json()
+        username = data.get('username')
+        password = data.get('password')
+
+        if not username or not password:
+            return jsonify({"status": "0009", "message": "Username and password are required"})
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+        existing_user = cursor.fetchone()
+        if existing_user:
+            conn.close()
+            return jsonify({"status": "0001", "message": "Username already exists"})
+
+        cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"status": "0000", "message": "User created successfully"})
 
 api.add_resource(CheckApkVersion, '/api/Common/CheckApkVersion')
-api.add_resource(Login, '/api/Common/Login')
+api.add_resource(CheckUserInfomation, '/api/Common/CheckUserInfomation')
+api.add_resource(CreateUser, '/api/Common/CreateUser')
 
 if __name__ == '__main__':
-    # 啟動 HTTPS
-    # app.run(ssl_context=('cert.pem', 'key.pem'), debug=True)
-    app.run(host='0.0.0.0', port=5000, ssl_context=('cert.pem', 'key.pem'), debug=True)
+    # #Start HTTPS
+    # app.run(ssl_context=('cert.pem', 'key.pem'), debug=True) # Default
+    # app.run(host='10.249.77.16', port=5000, ssl_context=('cert.pem', 'key.pem'), debug=True) # Company
+    app.run(host='192.168.22.53', port=5000, ssl_context=('cert.pem', 'key.pem'), debug=True) # Home
